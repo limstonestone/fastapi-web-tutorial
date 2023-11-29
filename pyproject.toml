@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "fastapi-web-tutorial"
+version = "0.1.0"
+description = ""
+authors = ["limstonestone <ehus1118@gmail.com>"]
+readme = "README.md"
+packages = [{include = "fastapi_web_tutorial"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.104.1"
+uvicorn = "^0.24.0.post1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
