@@ -1,0 +1,1 @@
+cd planner && mongod --dbpath store
