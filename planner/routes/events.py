@@ -35,7 +35,7 @@ async def retrieve_event(id: PydanticObjectId) -> Event:
 async def create_event(body: Event, user: str = Depends(authenticate)) -> dict:
     body.creator = user
     await event_database.save(body)
-    return {"message": "Event created successfully"}
+    return {"message": "Event created successfully."}
 
 
 @event_router.delete("/{id}")
