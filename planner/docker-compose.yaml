@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  api:
+    build: .
+    image: event-planner-api:latest # 현재 디렉토리(.) 도커파일 기준 최근 이미지를 빌드
+    ports:
+      - "8000:8000" # 포트를 정의하여 외부로도 노출 함
+    env_file:
+      - .env # 환경 파일로 설정, 환경 변수로도 설정 가능
+
+  database:
+    image: mongo:5.0.15 # docker pull mongo 를 통해 pull 한 mongo 이미지 사용
+    ports:
+      - "27017" # 포트를 정의했으나 외부로 노출하진 않음
+    volumes:
+      # 영구적 볼륨(저장소)를 서비스에 할당
+      - data:/data/db
+
+volumes:
+  data: # data 라는 볼륨을 할당하여 배포에 사용

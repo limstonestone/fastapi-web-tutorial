@@ -1,0 +1,4 @@
+# venv 는 poetry 를 쓰고 있으므로 빼도 됨
+venv
+.env
+.git
